@@ -1,0 +1,12 @@
+{
+  "name": "WorkShare",
+  "version": "0.0.1",
+  "description": "A Collaborative Workspace usin socket.io",
+  "main": "index.js",
+  "author": "Abraar Syed",
+  "license": "MIT",
+  "dependencies": {
+    "express": "3.4.8",
+    "socket.io": "~1.3.4"
+  }
+}

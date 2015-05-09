@@ -1,0 +1,128 @@
+*{
+	border:0;
+	padding:0;
+	margin:0;
+}
+#main-container{
+    	display:none;
+}
+.username-page{
+	background-color: #000;
+	position:absolute;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+}
+#editor-heading{
+	width:50%;
+	height:50px;
+	color:#fff;
+	background-color:#001F4C;
+	padding:0;
+}
+#editor-heading h1{
+	text-align:center;
+}
+#editor{
+        position:absolute;
+	top:50px;
+	left:0;
+	bottom:0;
+	width:50%;
+	background-color:#000;
+	padding:0;
+}
+#right-div{
+	position:absolute;
+	top:0;
+	left:50%;
+	bottom:0;
+	right:0;
+	width:50%;
+	background-color:#fff;
+}
+#hackers-list{
+	height:50px;
+	width:100%;
+	color:#fff;
+	background-color:#520000;
+	padding:0;
+}
+#hackers-list h1{
+	text-align:center;
+}
+#list1{
+	height:25%;
+	width:90%;
+	background-color:#fff;
+	padding:5%;
+	overflow-y:scroll;
+	list-style-type: none;
+}
+#chat{
+	height:50px;
+	width:100%;
+	color:#fff;
+	background-color:#520000;
+	padding:0;
+}
+#chat h1{
+	text-align:center;
+}
+#list2{
+	height:30%;
+	width:90%;
+	background-color:#fff;
+	padding:5%;
+        overflow-y:scroll;
+	list-style-type: none;
+}
+#message{
+	border: 1px solid #000;
+  	bottom: 0;
+  	height: 55px;
+  	left: 0;
+	padding-left:30px;
+  	position: absolute;
+  	right: 0;
+  	width: 100%;
+}
+.username-div{
+	height: 100px;
+	margin-top: -100px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 100%;
+}
+.username-title{
+	color:#fff;
+	font-size:200%;
+	text-align:center;
+	padding-bottom: 50px;
+}
+.username-input{
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #fff;
+	outline: none;
+	padding-bottom: 15px;
+	text-align: center;
+	width: 400px;
+	font-size: 200%;
+	letter-spacing: 3px;
+	color:#fff;
+}
+.log {
+	color: gray;
+	font-size: 100%;
+	margin: 5px;
+	text-align: center;
+}
+
+.messageBody {
+	color: gray;
+	padding-left:5%;
+}
+

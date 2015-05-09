@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>ACE in Action</title>
-<style type="text/css" media="screen">
-    #editor { 
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-	width:50%;
-    }
-</style>
-	</head>
-	<body>
-                 <div id="editor"></div>
-
-		<script src="src-noconflict/ace.js"></script>	
-		<script src="socket.js"></script>
-                <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-		<script>
-   			var socket = io();
-     			var editor = ace.edit("editor");
-    			editor.setTheme("ace/theme/ambiance");
-    			editor.getSession().setMode("ace/mode/javascript");
-			editor.setPrintMarginColumn(false);
-    			editor.setFontSize(28);
-			editor.setShowInvisibles(true);
-			editor.setflag = false;
-    			editor.on('change', function() {
-    			//console.log(e.data.text);
-    			//socket.emit('textdata',e.data.text);
-			if (!editor.setflag) {
-				socket.emit('editorUpdate', {
-					contents:editor.getValue()
-				});
-			}	 
-   			});
-    			socket.on('editorUpdate', function(data){
-	 		editor.setflag = true;
-        		editor.setValue(data.contents);
-			editor.clearSelection();
-        		console.log(data);
-		 	editor.setflag = false;
-    			});
-		</script>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<title>Collaborative WorkSpace</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>                
+	<div class=username-page>
+		<div class=username-div>
+		        <h3 class=username-title>What's your nickname?</h3>
+		        <input class=username-input type="text" maxlength="14" />
+		</div>
+	</div>
+	<div id=main-container>
+		<div>
+			<div id=editor-heading>
+				<h1>Editor</h1>
+			</div>
+			<div id=editor></div>
+		</div>
+		<div id=right-div>
+			<div id=hackers-list>
+				<h1>Connected Hackers</h1>
+			</div>
+			<ul id=list1></ul>
+			<div id=chat>
+				<h1>Chat</h1>
+			</div>
+			<ul id=list2></ul>
+			<input id="message" placeholder="Type here..."/>
+		</div>
+	</div>
+	<script src="src-noconflict/ace.js"></script>	
+	<script src="socket.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="/editor.js"></script>
+	<script src="/main.js"></script>
+</body>
 </html>

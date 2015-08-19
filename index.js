@@ -1,16 +1,22 @@
 // Setup basic express server
+require('coffee-script');
 var express = require('express');
+var sharejs = require('share').server;
 var app = express();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-var port = process.env.PORT || 3000;
-server.listen(port, function () {
-console.log('Server listening at port %d', port);
+var socket = require('socket.io');
+
+app.set('port', process.env.PORT || 4000);
+var server = require('http').createServer(app).listen(app.get('port'), function(){
+  console.log("Express server listening on port " + app.get('port'));
 });
 
 // Routing
 
 app.use(express.static(__dirname + '/public'));
+
+//sharejs code
+var options = {db: {type: 'none'}};
+sharejs.attach(app, options);
 
 
 var usernames = {};
@@ -18,13 +24,11 @@ var numUsers = 0;
 
 
 // when the client emits instructions, this listens and executes
+var io = require('socket.io').listen(server);
+
 io.on('connection', function(socket){
 
 var addedUser = false;
-
-  socket.on('editorUpdate', function(data){
-   socket.broadcast.emit('editorUpdate',data);
-  });
 
   // when the client emits 'new message', this listens and executes
   socket.on('new message', function (data) {

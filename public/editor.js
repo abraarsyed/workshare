@@ -5,19 +5,13 @@ editor.getSession().setMode("ace/mode/javascript");
 editor.setPrintMarginColumn(false);
 editor.setFontSize(28);
 editor.setShowInvisibles(true);
-editor.setflag = false;
-editor.on('change', function() {
-	if (!editor.setflag)
-	{
-		socket.emit('editorUpdate', {
-			contents:editor.getValue()
-		});
-	}	 
-});
-socket.on('editorUpdate', function(data){
-	editor.setflag = true;
-	editor.setValue(data.contents);
-	editor.clearSelection();
-        console.log(data);
-	editor.setflag = false;
+sharejs.open("documentname", 'text', function(error, doc) {
+if(error) {
+throw(error);
+}
+if(doc.created) {
+doc.insert(0, "var helloWorld = function() { \n World!'); \n};");
+}
+doc.attach_ace(editor);
+editor.setReadOnly(false);
 });

@@ -10,7 +10,7 @@ if(error) {
 throw(error);
 }
 if(doc.created) {
-doc.insert(0, "var helloWorld = function() { \n World!'); \n};");
+doc.insert(0, "HelloWorld;");
 }
 doc.attach_ace(editor);
 editor.setReadOnly(false);

@@ -3,90 +3,46 @@
 	padding:0;
 	margin:0;
 }
-#main-container{
-    	display:none;
+html,body {
+	height: 100%;
+	margin: 0;
+	background-color: #E5E5E5;
+	font-family: 'RobotoDraft', sans-serif;
 }
-.username-page{
+#Page1{
 	background-color: #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+#Page2{
+	display:none;
+}
+paper-tabs {
+	background: #E60000;
+	color: white;
+}
+#tabs {
+	width: 100%;
+	margin: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-transform: uppercase;
+}
+#main-container{
 	position:absolute;
-	bottom:0;
-	top:0;
-	left:0;
-	right:0;
-}
-#editor-heading{
-	width:50%;
-	height:50px;
-	color:#fff;
-	background-color:#001F4C;
-	padding:0;
-}
-#editor-heading h1{
-	text-align:center;
+	top:10%;
+	right:5%;
+	left:5%;
+	bottom:5%;
 }
 #editor{
-        position:absolute;
-	top:50px;
-	left:0;
-	bottom:0;
-	width:50%;
-	background-color:#000;
-	padding:0;
-}
-#right-div{
-	position:absolute;
-	top:0;
-	left:50%;
-	bottom:0;
-	right:0;
-	width:50%;
-	background-color:#fff;
-}
-#hackers-list{
-	height:50px;
+	height:100%;
 	width:100%;
-	color:#fff;
-	background-color:#520000;
-	padding:0;
-}
-#hackers-list h1{
-	text-align:center;
-}
-#list1{
-	height:25%;
-	width:90%;
-	background-color:#fff;
-	padding:5%;
-	overflow-y:scroll;
-	list-style-type: none;
-}
-#chat{
-	height:50px;
-	width:100%;
-	color:#fff;
-	background-color:#520000;
-	padding:0;
-}
-#chat h1{
-	text-align:center;
-}
-#list2{
-	height:30%;
-	width:90%;
-	background-color:#fff;
-	padding:5%;
-        overflow-y:scroll;
-	list-style-type: none;
-}
-#message{
-	border: 1px solid #000;
-  	bottom: 0;
-  	height: 55px;
-  	left: 0;
-	padding-left:30px;
-  	position: absolute;
-  	right: 0;
-  	width: 100%;
 }
 .username-div{
 	height: 100px;
@@ -114,15 +70,46 @@
 	letter-spacing: 3px;
 	color:#fff;
 }
+#list1{
+	background-color: #000;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	overflow-y: scroll;
+}
+#list2{
+	background-color: #000;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:20%;
+	overflow-y: scroll;
+}
+#input-message{
+	position:absolute;
+	top:80%;
+	bottom:0;
+	left:0;
+	right:0;
+	color:#fff;
+}
 .log {
-	color: gray;
+	color: #fff;
 	font-size: 100%;
 	margin: 5px;
 	text-align: center;
 }
-
-.messageBody {
-	color: gray;
-	padding-left:5%;
+.message{
+	padding-top: 2%;
 }
-
+.username{
+	padding-left:2%;
+}
+.messageBody {
+	color: #fff;
+	padding-left:2%;
+	padding-right: 2%;
+}

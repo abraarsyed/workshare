@@ -12,10 +12,10 @@ $(function() {
   var $usernameInput = $('.username-input'); // Input for username
   var $messages = $('#list2'); // Messages area
   var $loglist = $('#list1');
-  var $inputMessage = $('#message'); // Input message input box
+  var $inputMessage = $('#input-message'); // Input message input box
 
-  var $loginPage = $('.username-page'); // The login page
-  var $chatPage = $('#main-container'); // The chatroom page
+  var $loginPage = $('#Page1'); // The login page
+  var $chatPage = $('#Page2'); // The chatroom page
 
   // Prompt for setting a username
   var username;
@@ -29,9 +29,9 @@ $(function() {
   function addParticipantsMessage (data) {
     var message = '';
     if (data.numUsers === 1) {
-      message += "there's 1 participant";
+      message += "There's 1 participant";
     } else {
-      message += "there are " + data.numUsers + " participants";
+      message += "There are " + data.numUsers + " participants";
     }
     log(message,{
       prepend: true

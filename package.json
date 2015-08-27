@@ -5,7 +5,7 @@
     "type": "git",
     "url": " https://github.com/abraarsyed/workshares.git"
   },
-  "description": "A Collaborative Workspace usin socket.io",
+  "description": "A Collaborative Workspace using Sharejs and Socketio",
   "main": "index.js",
   "author": "Abraar Syed",
   "license": "MIT",

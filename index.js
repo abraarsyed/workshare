@@ -1,5 +1,4 @@
 // Setup basic express server
-require('coffee-script');
 var express = require('express');
 var sharejs = require('share').server;
 var app = express();
@@ -11,24 +10,22 @@ var server = require('http').createServer(app).listen(app.get('port'), function(
 });
 
 // Routing
-
 app.use(express.static(__dirname + '/public'));
 
 //sharejs code
 var options = {db: {type: 'none'}};
 sharejs.attach(app, options);
 
-
+//set initial numberOfUsers and usernames list
 var usernames = {};
 var numUsers = 0;
-
 
 // when the client emits instructions, this listens and executes
 var io = require('socket.io').listen(server);
 
 io.on('connection', function(socket){
 
-var addedUser = false;
+  var addedUser = false;
 
   // when the client emits 'new message', this listens and executes
   socket.on('new message', function (data) {
@@ -85,5 +82,4 @@ var addedUser = false;
       });
     }
   });
-
 });

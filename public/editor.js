@@ -6,12 +6,12 @@ editor.setPrintMarginColumn(false);
 editor.setFontSize(28);
 editor.setShowInvisibles(true);
 sharejs.open("documentname", 'text', function(error, doc) {
-if(error) {
-throw(error);
-}
-if(doc.created) {
-doc.insert(0, "HelloWorld;");
-}
-doc.attach_ace(editor);
-editor.setReadOnly(false);
+	if(error) {
+		throw(error);
+	}
+	if(doc.created) {
+		doc.insert(0, "HelloWorld;");
+	}
+	doc.attach_ace(editor);
+	editor.setReadOnly(false);
 });
